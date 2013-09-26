@@ -29,8 +29,7 @@ The modifications of Javascript code have been done in the following files and f
 h3. Installing and configuring
 
 For using this you have to download it in your "extensions" mediawiki directory and add the following configuration in your "LocalSettings.php" configuration file:
-<pre><code>
-notextile. # Éditeur visuel CKEditor
+<pre><code>notextile. # Éditeur visuel CKEditor
 require_once("$IP/extensions/WYSIWYG/WYSIWYG.php");
 $wgGroupPermissions['registered_users']['wysiwyg']=true;
 $wgGroupPermissions['*']['wysiwyg'] = true;
