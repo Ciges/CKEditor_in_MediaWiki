@@ -29,21 +29,22 @@ The modifications of Javascript code have been done in the following files and f
 h3. Installing and configuring
 
 For using this you have to download it in your "extensions" mediawiki directory and add the following configuration in your "LocalSettings.php" configuration file:
-<pre><code># Éditeur visuel CKEditor
-require_once("$IP/extensions/WYSIWYG/WYSIWYG.php");
-$wgGroupPermissions['registered_users']['wysiwyg']=true;
-$wgGroupPermissions['*']['wysiwyg'] = true;
-$wgDefaultUserOptions['cke_show'] = 'wikitexteditor';
-$wgDefaultUserOptions['riched_use_toggle'] = true;
-$wgDefaultUserOptions['riched_start_disabled'] = false;
-$wgDefaultUserOptions['riched_toggle_remember_state'] = true;
-$wgDefaultUserOptions['riched_use_popup'] = false;
-$wgFCKEditorExcludedNamespaces[] = NS_MEDIAWIKI;
-$wgFCKEditorExcludedNamespaces[] = NS_TEMPLATE;
-
-notextile. # Enables use of WikiEditor by default but still allow users to disable it in preferences
-$wgDefaultUserOptions['usebetatoolbar'] = 1;
-$wgDefaultUserOptions['usebetatoolbar-cgd'] = 1;
+<pre><code>
+  # Éditeur visuel CKEditor
+  require_once("$IP/extensions/WYSIWYG/WYSIWYG.php");
+  $wgGroupPermissions['registered_users']['wysiwyg']=true;
+  $wgGroupPermissions['*']['wysiwyg'] = true;
+  $wgDefaultUserOptions['cke_show'] = 'wikitexteditor';
+  $wgDefaultUserOptions['riched_use_toggle'] = true;
+  $wgDefaultUserOptions['riched_start_disabled'] = false;
+  $wgDefaultUserOptions['riched_toggle_remember_state'] = true;
+  $wgDefaultUserOptions['riched_use_popup'] = false;
+  $wgFCKEditorExcludedNamespaces[] = NS_MEDIAWIKI;
+  $wgFCKEditorExcludedNamespaces[] = NS_TEMPLATE;
+  
+  notextile. # Enables use of WikiEditor by default but still allow users to disable it in preferences
+  $wgDefaultUserOptions['usebetatoolbar'] = 1;
+  $wgDefaultUserOptions['usebetatoolbar-cgd'] = 1;
 </code></pre> 
 
 
