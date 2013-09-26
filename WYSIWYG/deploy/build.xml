@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="build" name="wysiwyg">
+
+  <!-- =====================================================================
+       BUILD
+       ===================================================================== -->
+  <target name="build" depends="versionhint">
+    <echo>Start building ${ant.project.name}: ${ant.file}</echo>
+    <delete dir="bin/zip" quiet="true" />
+    <delete quiet="true">
+      <fileset dir="bin" includes="wysiwyg*.zip" />
+    </delete>
+    <mkdir dir="bin/zip" />
+
+    <!-- Issue 16142 - Make sure the Wysiwyg code is packed by the nightly builds -->
+    <property name="ckeditor.dir" location="../ckeditor" />
+    <echo>Pack Wysiwyg in: ${ckeditor.dir}</echo>
+    <java jar="${ckeditor.dir}/ckpackager.jar" fork="true" failonerror="true" dir="${ckeditor.dir}">
+      <arg value="ckeditor.pack" />
+      <arg value="-v" />
+    </java>
+
+    <copy todir="bin/zip/extensions/WYSIWYG/">
+      <fileset file="../**">
+        <exclude name="**/.svn, **/CVS" />
+        <exclude name="**/deploy/**" />
+        <exclude name="**/tests/**" />
+      </fileset>
+      <fileset dir="../../../patches/">
+        <include name="patch.php" />
+      </fileset>
+      <fileset dir="../../../deployment/tools">
+        <include name="patch.exe" />
+        <include name="patch.exe.manifest" />
+      </fileset>
+    </copy>
+
+    <zip destfile="bin/wysiwyg.zip" basedir="bin/zip" />
+    <delete dir="bin/zip" quiet="true" />
+    <exec executable="php">
+      <arg value="../../../buildtools/renameDeployable.php" />
+      <arg value="../deploy.xml" />
+      <arg value="bin/wysiwyg.zip" />
+    </exec>
+  </target>
+
+  <!-- =====================================================================
+       VERSIONHINT
+       ===================================================================== -->
+  <target name="versionhint">
+    <property environment="env" />
+    <echo>== Versionhint for ${ant.project.name}: env.BUILD_NUMBER=${env.BUILD_NUMBER} ==</echo>
+    <property name="versionhint.WYSIWYG.file" location="../WYSIWYG.php" />
+    <echo>* Versionhint.WYSIWYG.file: ${versionhint.WYSIWYG.file}</echo>
+
+    <exec executable="php">
+      <arg value="../../../buildtools/replaceVersionHint.php" />
+      <arg value="../deploy.xml" />
+      <arg value="../WYSIWYG.php" />
+      <arg value="${env.BUILD_NUMBER}" />
+    </exec>
+  </target>
+
+  <!-- =====================================================================
+       PATCHES
+       ===================================================================== -->
+  <target name="patches" depends="checkos">
+    <echo message="########### ${patchtool}" />
+    <exec executable="php">
+      <arg value="../../../deployment/tools/patch.php" />
+      <arg value="-d" />
+      <arg value="${basedir}/../../../" />
+      <arg value="-p" />
+      <arg value="../patch_for_MW_1.16.x.txt" />
+      <arg value="--patchtool" />
+      <arg value="${patchtool}" />
+    </exec>
+
+    <exec executable="php">
+      <arg value="../../../deployment/tools/patch.php" />
+      <arg value="-d" />
+      <arg value="${basedir}/../../../" />
+      <arg value="-p" />
+      <arg value="../patch_for_SF_2.3.2.txt" />
+      <arg value="--patchtool" />
+      <arg value="${patchtool}" />
+    </exec>
+  </target>
+
+  <!-- =====================================================================
+       CHECKOS
+       ===================================================================== -->
+  <target name="checkos">
+    <condition property="patchtool" value="${basedir}/../../../deployment/tools/patch.exe">
+      <os family="windows" />
+    </condition>
+    <condition property="patchtool" value="patch">
+      <os family="unix" />
+    </condition>
+  </target>
+</project>

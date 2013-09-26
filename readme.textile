@@ -1,0 +1,53 @@
+h2. CKEditor integration in MediaWiki 1.20
+
+h3. Description
+
+In this directory you can find patched versions of "WYSIWYG":https://www.mediawiki.org/wiki/Extension:WYSIWYG and "WikiEditor":http://www.mediawiki.org/wiki/Extension:WikiEditor MediaWiki 1.20 extensions. This allows to use CKEditor for editing the wiki articles.
+
+WYSIWYG extension allows to integrate the visual editor CKEditor in MediaWiki:http://ckeditor.com/demo in MediaWiki.
+WikiEditor is the new version of MediaWiki wikitext editor (wikitext is the syntax for Mediawiki articles, like the one you can see at Wikipedia)
+
+The following has been done:
+* Install "WYSIWYG 1.7":http://www.mediawiki.org/wiki/Extension:WYSIWYG#Download extension
+* Add/Replace the five files told by "DheerajKumarBit":http://www.mediawiki.org/wiki/Extension_talk:WYSIWYG#Patch_for_MW_1.19_12780 with the patches to make it work in MediaWiki 1.20 version
+* Modify some of the JavaScript code for integrate WYSIWYG and WikiEditor 
+
+The modifications of Javascript code have been done in the files and for
+*WYSIWYG/ckeditor/config.js* 
+* Disable save button, as it does not work when modifying sections (it replaces all the article text)
+* Disable Semantic Mediawiki toolbar, as it's not used in my installations
+*WYSIWYG/scripts/init.js*
+* Hide WikiEditor toolbar when CKEditor is enabled to prevent both appearing at the same time
+* Correct toggle link position
+* Hide/Move some graphical elements
+*WikiEditor/modules/ext.wikiEditor.toolbar.js* 
+* Hide WikiEditor toolbar at load if CKEditor is enabled 
+* Correct toggle link position
+
+h3. Installing and configuring
+
+For using this you have to download it in your "extensions" mediawiki directory and add the following configuration in your "LocalSettings.php" configuration file:
+<pre><code>
+ Éditeur visuel CKEditor
+require_once("$IP/extensions/WYSIWYG/WYSIWYG.php");
+$wgGroupPermissions['registered_users']['wysiwyg']=true;
+$wgGroupPermissions['*']['wysiwyg'] = true;
+$wgDefaultUserOptions['cke_show'] = 'wikitexteditor';
+$wgDefaultUserOptions['riched_use_toggle'] = true;
+$wgDefaultUserOptions['riched_start_disabled'] = false;
+$wgDefaultUserOptions['riched_toggle_remember_state'] = true;
+$wgDefaultUserOptions['riched_use_popup'] = false;
+$wgFCKEditorExcludedNamespaces[] = NS_MEDIAWIKI;
+$wgFCKEditorExcludedNamespaces[] = NS_TEMPLATE;
+
+
+# Enables use of WikiEditor by default but still allow users to disable it in preferences
+$wgDefaultUserOptions['usebetatoolbar'] = 1;
+$wgDefaultUserOptions['usebetatoolbar-cgd'] = 1;
+</code></pre> 
+
+
+Regards
+
+"Ciges":http://www.ciges.net
+

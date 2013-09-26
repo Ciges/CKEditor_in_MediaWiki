@@ -1,0 +1,33 @@
+== Installation ==
+
+Information about the extension can be found at:
+http://smwforum.ontoprise.com/smwforum/index.php/Help:WYSIWYG_extension
+
+To install the extension please:
+* unzip the ZIP archive into your Mediawiki installation directory.
+* edit your LocalSettings.php and add:
+  require_once('extensions/WYSIWYG/WYSIWYG.php');
+
+== Apply Patches ==
+
+There are several patch files provided in case you are using Semantic Forms extension.
+Please apply only the patch with name which corresponds to the extension version.
+
+Find more detailed information about the Semantic Forms patches at:
+http://www.smwplus.com/index.php/Help:Installing_the_WYSIWYG_extension_manually_on_top_of_MediaWiki_%28v_1.16.x%29_1.6.0
+
+Applying the patch can be done with the script patch.php. Open a command line 
+in the root folder of the WYSIWYG extension and enter:
+
+php patch.php -d <install_dir of mediawiki> -p <patchfile>
+
+Replace <install_dir of mediawiki> and <patchfile> by appropriate values.
+
+== About the project ==
+
+This extension is developed from the official Mediawiki extension: Extension:FCKeditor (which is now obsolete)
+http://www.mediawiki.org/wiki/Extension:FCKeditor_%28Official%29
+
+The WYSIWYG extension adds a Word-like article creation and editing experience to MediaWiki installations.
+It includes the well-established toolbar, importing of formated text and tables, a real time spell-checker, undo/redo functions and more.
+If SMW+ is installed, the WYSIWYG extension also provides buttons for specific functions like the Semantic Toolbar, the Query Interface etc

@@ -1,0 +1,307 @@
+10
+
+dir
+14196
+svn+ssh://halodev.ontoprise.com:9630/home/halodev/HaloSMWExtension/trunk/extensions/WYSIWYG/ckeditor/_source/plugins
+svn+ssh://halodev.ontoprise.com:9630/home/halodev
+
+
+
+2012-04-25T09:15:15.083636Z
+14181
+rizhikov
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+f80b7aa0-dfcc-4e65-a0d9-74108174cbc8
+
+a11yhelp
+dir
+
+about
+dir
+
+adobeair
+dir
+
+ajax
+dir
+
+autogrow
+dir
+
+basicstyles
+dir
+
+bbcode
+dir
+
+bidi
+dir
+
+blockquote
+dir
+
+button
+dir
+
+clipboard
+dir
+
+colorbutton
+dir
+
+colordialog
+dir
+
+contextmenu
+dir
+
+devtools
+dir
+
+dialog
+dir
+
+dialogadvtab
+dir
+
+dialogui
+dir
+
+div
+dir
+
+docprops
+dir
+
+domiterator
+dir
+
+editingblock
+dir
+
+elementspath
+dir
+
+enterkey
+dir
+
+entities
+dir
+
+fakeobjects
+dir
+
+filebrowser
+dir
+
+find
+dir
+
+flash
+dir
+
+floatpanel
+dir
+
+font
+dir
+
+format
+dir
+
+forms
+dir
+
+horizontalrule
+dir
+
+htmldataprocessor
+dir
+
+htmlwriter
+dir
+
+iframe
+dir
+
+iframedialog
+dir
+
+image
+dir
+
+indent
+dir
+
+justify
+dir
+
+keystrokes
+dir
+
+link
+dir
+
+list
+dir
+
+listblock
+dir
+
+liststyle
+dir
+
+maximize
+dir
+
+mediawiki
+dir
+
+mediawiki.api
+dir
+
+menu
+dir
+
+menubutton
+dir
+
+mwtemplate
+dir
+
+newpage
+dir
+
+pagebreak
+dir
+
+panel
+dir
+
+panelbutton
+dir
+
+pastefromword
+dir
+
+pastetext
+dir
+
+placeholder
+dir
+
+popup
+dir
+
+preview
+dir
+
+print
+dir
+
+removeformat
+dir
+
+resize
+dir
+
+richcombo
+dir
+
+save
+dir
+
+saveAndExit
+dir
+
+scayt
+dir
+
+selection
+dir
+
+showblocks
+dir
+
+showborders
+dir
+
+smiley
+dir
+
+smwqueryinterface
+dir
+
+smwrichmedia
+dir
+
+smwrule
+dir
+
+smwtoolbar
+dir
+
+smwwebservice
+dir
+
+sourcearea
+dir
+
+specialchar
+dir
+
+styles
+dir
+
+stylescombo
+dir
+
+stylesheetparser
+dir
+
+tab
+dir
+
+table
+dir
+
+tableresize
+dir
+
+tabletools
+dir
+
+templates
+dir
+
+toolbar
+dir
+
+uicolor
+dir
+
+undo
+dir
+
+wsc
+dir
+
+wysiwygarea
+dir
+
+xml
+dir
+

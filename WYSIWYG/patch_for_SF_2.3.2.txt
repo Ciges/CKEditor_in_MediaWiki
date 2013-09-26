@@ -1,0 +1,13 @@
+
+Index: extensions/SemanticForms/includes/SF_Utils.php
+===================================================================
+--- extensions/SemanticForms/includes/SF_Utils.php	(revision 13971)
++++ extensions/SemanticForms/includes/SF_Utils.php	(working copy)
+@@ -289,6 +289,7 @@
+ 		$output->addModules( 'ext.semanticforms.submit' );
+ 		$output->addModules( 'ext.smw.tooltips' );
+ 		$output->addModules( 'ext.smw.sorttable' );
++		$output->addModules( 'ext.wysiwyg.core' );
+ 	}
+ 
+ 	/**

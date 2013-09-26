@@ -1,0 +1,31 @@
+10
+
+dir
+14196
+svn+ssh://halodev.ontoprise.com:9630/home/halodev/HaloSMWExtension/trunk/extensions/WYSIWYG/ckeditor/plugins/find
+svn+ssh://halodev.ontoprise.com:9630/home/halodev
+
+
+
+2011-06-16T16:05:25.921901Z
+11206
+rizhikov
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+f80b7aa0-dfcc-4e65-a0d9-74108174cbc8
+
+dialogs
+dir
+
