@@ -30,7 +30,7 @@ h3. Installing and configuring
 
 For using this you have to download it in your "extensions" mediawiki directory and add the following configuration in your "LocalSettings.php" configuration file:
 <pre><code>
-# Éditeur visuel CKEditor
+notextile. # Éditeur visuel CKEditor
 require_once("$IP/extensions/WYSIWYG/WYSIWYG.php");
 $wgGroupPermissions['registered_users']['wysiwyg']=true;
 $wgGroupPermissions['*']['wysiwyg'] = true;
@@ -42,7 +42,7 @@ $wgDefaultUserOptions['riched_use_popup'] = false;
 $wgFCKEditorExcludedNamespaces[] = NS_MEDIAWIKI;
 $wgFCKEditorExcludedNamespaces[] = NS_TEMPLATE;
 
-# Enables use of WikiEditor by default but still allow users to disable it in preferences
+notextile. # Enables use of WikiEditor by default but still allow users to disable it in preferences
 $wgDefaultUserOptions['usebetatoolbar'] = 1;
 $wgDefaultUserOptions['usebetatoolbar-cgd'] = 1;
 </code></pre> 
