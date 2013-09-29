@@ -46,6 +46,8 @@ $wgDefaultUserOptions['usebetatoolbar'] = 1;
 $wgDefaultUserOptions['usebetatoolbar-cgd'] = 1;
 </code></pre> 
 
+You can find a longer explanation of the work done in "this post":http://www.ciges.net/integracion-del-editor-visual-ckeditor-en-mediawiki of my web (in Spanish). 
+
 
 Regards
 
